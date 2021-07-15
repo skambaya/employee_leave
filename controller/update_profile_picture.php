@@ -5,7 +5,7 @@ include "../include/config.php";
         $name = $_FILES['file']['name'];  
         $temp_name = $_FILES['file']['tmp_name'];  
         if(isset($name) and !empty($name)){
-            $location = '../employee_image/';      
+            $location = '../assets/employee_image/';      
             if(move_uploaded_file($temp_name, $location.$name)){
                 $update = "UPDATE employee SET file = '$name' WHERE employee_ID = '$employee_ID'";
                 $run = mysqli_query($con, $update);

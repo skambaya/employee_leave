@@ -41,20 +41,11 @@ include('include/header.php');
                                             <thead>
                                                 <tr>
                                                     <th>S/n</th>
-                                                    <td>Photo</td>
                                                     <th>Name</th>
                                                     <th>DOB</th>
                                                     <th>Email</th>
-                                                    <!-- <th>Address</th>
-                                                    <th>Phone</th> -->
                                                     <th>Gender</th>
-                                                    
-                                                    
-                                                    <!-- <th>Location</th>
-                                                    <th>Marital status</th> -->
                                                     <th>Department</th>
-                                                    <!-- <th>Work Place</th>
-                                                    <th>Position</th> -->
                                                     <th>Action</th>
                                                 </tr>
                                                 </tr>
@@ -69,15 +60,6 @@ include('include/header.php');
                                                         ?>
                                                         <tr class="odd gradeX">
                                                             <td width="10"><?php echo $i ?></td>
-                                                            
-                                                            <td>
-                                                            <?php if($row['file'] == ""){
-                                                                echo "no image";
-                                                            }else{
-                                                                
-                                                            }
-                                                            ?>
-                                                            <img class="img-responsive" height=100 width=100 src="employee_image/<?php echo $row['file']; ?>"></td>
                                                             
                                                             <td><?php echo $row['employee_fname']." ". $row['employee_lname']?></td>
                                                             <td><?php echo $row['date_of_birth']?></td>

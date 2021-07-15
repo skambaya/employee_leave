@@ -10,41 +10,33 @@
         <title>Employee Leave Management System</title>
 
         <!-- Bootstrap Core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- MetisMenu CSS -->
-        <link href="css/metisMenu.min.css" rel="stylesheet">
+        <link href="assets/css/metisMenu.min.css" rel="stylesheet">
 
         <!-- DataTables CSS -->
-        <link href="css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+        <link href="assets/css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
 
         <!-- DataTables Responsive CSS -->
-        <link href="css/dataTables/dataTables.responsive.css" rel="stylesheet">
+        <link href="assets/css/dataTables/dataTables.responsive.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="css/startmin.css" rel="stylesheet">
+        <link href="assets/css/startmin.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
-        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
         <!-- MetisMenu CSS -->
 
         <!-- Timeline CSS -->
-        <link href="css/timeline.css" rel="stylesheet">
+        <link href="assets/css/timeline.css" rel="stylesheet">
 
         <!-- Custom CSS -->
 
         <!-- Morris Charts CSS -->
-        <link href="css/morris.css" rel="stylesheet">
+        <link href="assets/css/morris.css" rel="stylesheet">
 
-        <!-- Custom Fonts -->
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
     </head>
     <body>
 
@@ -179,7 +171,7 @@
                                 $run_query = mysqli_query($con, $query);
                                 $row = mysqli_fetch_array($run_query);
                             ?>
-                            <img  height="22px" width="50px" src="employee_image/<?php echo $row['file']; ?>">
+                            <img  height="22px" width="50px" src="assets/employee_image/<?php echo $row['file']; ?>">
                             <?php echo $_SESSION["email"]; ?> <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
@@ -280,9 +272,9 @@
                                 </ul>
                                 <!-- /.nav-second-level -->
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="report" target="_blank"><i class="fa fa-clipboard fa-fw"></i> Report</a>
-                            </li>
+                            </li> -->
                                 <?php } ?>
                             <li>
                                 <a href="profile"><i class="fa fa-user fa-fw"></i> My profile</a>

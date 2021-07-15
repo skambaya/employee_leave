@@ -1,6 +1,3 @@
 <?php
-
-$connect = new PDO('mysql:host=localhost;dbname=maria_project', 'root', '');
-//session_start();
-
+	$connect = new PDO('mysql:host=localhost;dbname=employee_leave', 'root', '');
 ?>

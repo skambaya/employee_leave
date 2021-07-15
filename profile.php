@@ -87,7 +87,7 @@ include('include/header.php');
                                                         ?>
                                                         <tr>
                                                             <td colspan="6">
-                                                                <img class="img-thumbnail img-responsive" width="150px" src="employee_image/<?php echo $row['file']; ?>">
+                                                                <img class="img-thumbnail img-responsive" width="150px" src="assets/employee_image/<?php echo $row['file']; ?>">
                                                                 <a href="" type="button" data-toggle="modal" data-target="#myModal<?php echo $row['employee_ID']?>"><span class="fa fa-pencil"></span> Change Photo</a>
                                                                 <?php include('edit_profile_picture.php') ?>
                                                             </td>

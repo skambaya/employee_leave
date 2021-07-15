@@ -20,9 +20,12 @@
             $name = $_FILES['file']['name'];
             $work_place = mysqli_real_escape_string($con, $_POST['work_place']);
             $position = mysqli_real_escape_string($con, $_POST['position']);
-            $role = mysqli_real_escape_string($con, $_POST['role']); 
+            $role = mysqli_real_escape_string($con, $_POST['role']);
 
-            $target_dir = "../employee_image/";
+
+            $good_number = substr($phone_number, 1); 
+
+            $target_dir = "../assets/employee_image/";
             $target_file = $target_dir . basename($_FILES["file"]["name"]);
 
             // Select file type
@@ -37,7 +40,7 @@
             if($row == FALSE){
 
             $add = "INSERT INTO employee (employee_ID, employee_fname, employee_lname, date_of_birth, phone_number, email, address, gender, city, country, marital_status, file, department_ID)
-            VALUES ('$employee_ID', '$employee_fname', '$employee_lname', '$date_of_birth', '$phone_number', '$email', '$address', '$gender', '$city', '$country', '$marital_status', '$name', '$department_ID')";
+            VALUES ('$employee_ID', '$employee_fname', '$employee_lname', '$date_of_birth', '255"."$good_number', '$email', '$address', '$gender', '$city', '$country', '$marital_status', '$name', '$department_ID')";
             
             
             $send = mysqli_query($con, $add);

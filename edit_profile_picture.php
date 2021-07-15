@@ -11,7 +11,7 @@
                     <form action="controller/update_profile_picture.php" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
                     <input type="hidden" name="employee_ID" value="<?php echo $row['employee_ID']?>"/>
-                    <img class="img-thumbnail img-responsive" width="150px" src="employee_image/<?php echo $row['file']; ?>">
+                    <img class="img-thumbnail img-responsive" width="150px" src="assets/employee_image/<?php echo $row['file']; ?>">
                     
                      <input type="file"  name="file" class="form-control">
                         <br>

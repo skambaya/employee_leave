@@ -1,6 +1,7 @@
 <?php
     session_start();
-    include "../include/config.php";
+    include ('../include/config.php');
+    include ('../include/tool.php');
     if($_SESSION['token']==$_POST['token']){
         if(isset($_POST['submit'])){
             $password = password_hash(mysqli_real_escape_string($con, $_POST['password']), PASSWORD_DEFAULT);
@@ -22,7 +23,15 @@
         
 }
         }
-    }else{
-        header('Location: ../change_password');
+        }else{
+        header('Location: ../new_pass');
  }
+        if(isset($_POST['recover'])){
+            $password = password_hash(mysqli_real_escape_string($con, $_POST['password']), PASSWORD_DEFAULT);
+
+            mysqli_query($con, "UPDATE user set password='" . $password . "' WHERE employee_ID='" . $_SESSION["employee_ID"] . "'");
+            $message=openssl_encrypt ("Password Changed Successful", $ciphering, $encryption_key, $options, $encryption_iv);
+            header("Location: ../index?success=$message");
+        }
+    
 ?>

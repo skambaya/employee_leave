@@ -1,11 +1,15 @@
 <?php
-include('include/db_connect.php');
-session_start();
-if(!isset($_SESSION["type"]))
-{
-	header("location:login");
-} 
-include('include/header.php'); 
+    session_start();
+    include('include/db_connect.php');
+    include('include/tools.php'); 
+    if(!isset($_SESSION["type"]))
+    {
+        // if($_SESSION["type"] == 'admin'){
+            header("location:login");
+        // }
+    } 
+
+    include('include/header.php'); 
 ?>
             <div id="page-wrapper">
                 <div class="container-fluid">
@@ -21,6 +25,7 @@ include('include/header.php');
                         </div>
                         <!-- /.col-lg-12 -->
                         <?php
+                        if($_SESSION["type"] == 'admin'){
                                 include ('include/config.php');
                                 $query = "SELECT * FROM user INNER JOIN employee on user.employee_ID = employee.employee_ID WHERE employee.email = '$_SESSION[email]'";
                                 $run_query = mysqli_query($con, $query);
@@ -30,7 +35,20 @@ include('include/header.php');
                                         <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
                                         $show
                                     </div></div>";
+                                }
                             ?>   
+
+                            <?php
+                            if(!empty($_GET['success'])) {
+                                $show = $_GET['success'];
+                                  $decryption=openssl_decrypt ($show, $ciphering, $decryption_key, $options, $decryption_iv);
+                                echo "<div class='col-md-12'><div class='alert alert-info alert-dismissible'>
+                                        <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+                                        $decryption
+                                    </div></div>";
+                            }
+                            
+                                    ?>
                     </div>
                     <!-- /.row -->
                   <div class="row">
